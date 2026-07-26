@@ -2,48 +2,122 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import FormattedDate from '../components/FormattedDate.astro';
+import { getCollection } from 'astro:content';
+import { SITE_TITLE, SITE_DESCRIPTION, CALLSIGN, NAME } from '../consts';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.hero {
+				padding: 2rem 0 1rem;
+				border-bottom: 1px solid rgb(var(--gray-light));
+				margin-bottom: 2rem;
+			}
+			.callsign {
+				font-family: monospace;
+				letter-spacing: 0.15em;
+				color: rgb(var(--accent));
+				font-size: 1.1rem;
+			}
+			.hero h1 {
+				margin: 0.2em 0 0.4em;
+			}
+			.lead {
+				font-size: 1.15rem;
+				color: rgb(var(--gray-dark));
+			}
+			.facts {
+				list-style: none;
+				padding: 0;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem 1.5rem;
+				margin: 1.5rem 0 0;
+			}
+			.facts li {
+				background: rgb(var(--gray-light));
+				border-radius: 999px;
+				padding: 0.3rem 0.9rem;
+				font-size: 0.9rem;
+			}
+			.recent h2 {
+				margin-bottom: 0.5rem;
+			}
+			.recent ul {
+				list-style: none;
+				padding: 0;
+			}
+			.recent li {
+				padding: 0.75rem 0;
+				border-bottom: 1px solid rgb(var(--gray-light));
+			}
+			.recent a {
+				text-decoration: none;
+				font-weight: 600;
+			}
+			.recent a:hover {
+				color: rgb(var(--accent));
+			}
+			.recent .date {
+				display: block;
+				color: rgb(var(--gray));
+				font-size: 0.85rem;
+			}
+			.more {
+				display: inline-block;
+				margin-top: 1rem;
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section class="hero">
+				<span class="callsign">{CALLSIGN}</span>
+				<h1>Ham radio, one project at a time</h1>
+				<p class="lead">
+					G'day — I'm {NAME}, a freshly-minted Foundation licensee in Canberra,
+					licensed in 2026. This is my logbook: the antennas I build, the repeaters I work,
+					and everything I'm learning as I go. Follow along, and if you hear me on air, say hello.
+				</p>
+				<ul class="facts">
+					<li>📍 Canberra, ACT</li>
+					<li>🎓 Foundation licence</li>
+					<li>📻 Quansheng handheld</li>
+					<li>🛰️ 2 m VHF &amp; 70 cm UHF</li>
+					<li>🏛️ Canberra Region Amateur Radio Club</li>
+					<li>⚜️ Scouts ACT Radio Team</li>
+				</ul>
+			</section>
+
+			<section class="recent">
+				<h2>Latest from the logbook</h2>
+				{
+					posts.length === 0 ? (
+						<p>No posts yet — the first one is on its way.</p>
+					) : (
+						<ul>
+							{posts.map((post) => (
+								<li>
+									<a href={`/blog/${post.id}/`}>{post.data.title}</a>
+									<span class="date">
+										<FormattedDate date={post.data.pubDate} />
+									</span>
+								</li>
+							))}
+						</ul>
+					)
+				}
+				<a class="more" href="/blog">See the full logbook →</a>
+			</section>
 		</main>
 		<Footer />
 	</body>
