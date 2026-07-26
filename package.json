@@ -1,6 +1,6 @@
 {
-	"name": "astro-blog-starter-template",
-	"description": "Build a personal website, blog, or portfolio with Astro.",
+	"name": "vk1ben-logbook",
+	"description": "VK1BEN amateur radio logbook — an Astro blog about my ham radio journey.",
 	"cloudflare": {
 		"label": "Astro Framework Starter",
 		"products": [
