@@ -15,9 +15,6 @@ I'm building mine straight from the VK2ZOI article:
 [**Half-Wave Flower Pot Antenna**](https://vk2zoi.com/articles/half-wave-flower-pot/). This post is my
 working copy of the key numbers plus notes to myself — always defer to the original article.
 
-> ⚠️ **Foundation licence note:** under my licence I can build and use antennas like this. As always,
-> keep antennas well clear of powerlines, and never install where a falling mast could reach one.
-
 ## How it works (in one paragraph)
 
 The flower pot is an **end-fed half-wave vertical**. The top section is the coax's exposed centre
@@ -37,8 +34,30 @@ about **5–6 % below** the operating frequency.
   attach to a support).
 - One conduit **end cap**.
 - **Fishing line** (thin nylon), ~0.5 m, to tension the radiator.
-- Connector to suit your radio (SMA / BNC / PL-259).
+- A **connector to suit your radio.** My Quansheng handheld has an SMA antenna socket, so I'm
+  terminating the coax with a **BNC crimp plug** and using a **BNC-to-SMA adaptor** onto the radio.
 - Heatshrink and PVC tape for weatherproofing.
+
+### What I ordered (Jaycar)
+
+Here's my actual shopping list for this build:
+
+| Item | Jaycar cat. no. | Qty | Price |
+| --- | --- | --- | --- |
+| 50 Ω RG58 C/U coax ($2.45/m) | WB2012 | 10 m | $24.50 |
+| BNC male crimp plug for RG58 | PP0649 | 1 | $2.95 |
+| BNC socket to SMA socket adaptor | PA0615 | 1 | $5.95 |
+| Nitto insulation tape, white 20 m | NM2807 | 1 | $3.95 |
+| Ratchet crimping tool for BNC/TNC | TH1846 | 1 | $56.95 |
+| | | **Sub-total** | **$94.30** |
+
+The crimp tool is the big-ticket item, but it's a one-off that'll pay for itself across future coax
+jobs. That's $94.30 all up (incl. $8.58 GST).
+
+For the conduit I'm using a **1.2 m offcut of 25 mm pipe** I already had under the house — comfortably
+over the 1 m minimum, and free. I'll just need an **end cap** and a bit of **fishing line**. (Worth
+double-checking it's non-conductive grey electrical-type conduit, since the element lengths already
+allow ~2 % shortening for that material.)
 
 ## Dimensions for 146 MHz (2 m)
 

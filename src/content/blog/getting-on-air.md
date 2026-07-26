@@ -29,8 +29,8 @@ The Foundation licence is a doorway, not a destination. A few things I'm keen to
 2. **Work the repeaters properly** and understand how they extend my range across the ACT.
 3. **Help with Scouts radio**, including Jamboree on the Air (JOTA).
 4. **Explore HF and study toward the next licence.** In Australia, my Foundation licence already lets
-   me use selected HF frequencies at up to 10 W, so I want to get on the air there — and study toward
-   the next licence to open up more of the spectrum and reach further afield.
+   me use selected HF frequencies at up to 10 W, so I want to get on the air there. I also plan to
+   study toward the next licence to open up more of the spectrum and reach further afield.
 
 ## Why write it down
 
