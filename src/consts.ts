@@ -9,4 +9,4 @@ export const LOCATION = "Canberra, ACT";
 
 export const SITE_TITLE = `${CALLSIGN} · ${NAME}`;
 export const SITE_DESCRIPTION =
-	"Amateur radio notebook — my journey from a Foundation licence in Canberra through repeaters, antennas and Scouts radio. 73!";
+	"Amateur radio notebook. My journey from a Foundation licence in Canberra through repeaters, antennas and Scouts radio. 73!";

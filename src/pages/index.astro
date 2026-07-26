@@ -84,7 +84,7 @@ const posts = (await getCollection('blog'))
 				<span class="callsign">{CALLSIGN}</span>
 				<h1>Ham radio, one project at a time</h1>
 				<p class="lead">
-					G'day — I'm {NAME}, a freshly-minted Foundation licensee in Canberra,
+					G'day! I'm {NAME}, a freshly-minted Foundation licensee in Canberra,
 					licensed in 2026. This is my logbook: the antennas I build, the repeaters I work,
 					and everything I'm learning as I go. Follow along, and if you hear me on air, say hello.
 				</p>
@@ -102,7 +102,7 @@ const posts = (await getCollection('blog'))
 				<h2>Latest from the logbook</h2>
 				{
 					posts.length === 0 ? (
-						<p>No posts yet — the first one is on its way.</p>
+						<p>No posts yet, but the first one is on its way.</p>
 					) : (
 						<ul>
 							{posts.map((post) => (

@@ -32,6 +32,34 @@ All commands are run from the root of the project, from a terminal:
 | `npm run deploy`                  | Deploy the production site to Cloudflare         |
 | `npx wrangler tail`               | View real-time logs for the Worker               |
 
+## Build, preview and deploy
+
+The usual workflow for publishing a change:
+
+1. **Build** the production site into `./dist/`:
+
+   ```bash
+   npm run build
+   ```
+
+2. **Preview** the built site locally through Wrangler, exactly as Cloudflare will serve it. This starts a local server at [http://localhost:4321](http://localhost:4321):
+
+   ```bash
+   npm run preview
+   ```
+
+   Open [http://localhost:4321](http://localhost:4321) in your browser to check everything looks right before going live.
+
+3. **Deploy** to Cloudflare Workers once you're happy:
+
+   ```bash
+   npm run deploy
+   ```
+
+   The first deploy will prompt you to log in to your Cloudflare account in the browser.
+
+For day-to-day writing, `npm run dev` also serves the site at [http://localhost:4321](http://localhost:4321) with live reload, so you don't need to rebuild after each edit.
+
 ## Learn more
 
 Check out [the Astro documentation](https://docs.astro.build) to learn more about the framework.
