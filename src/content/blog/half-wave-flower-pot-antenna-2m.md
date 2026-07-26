@@ -131,7 +131,3 @@ Straight from the article's tips — worth doing here in Canberra:
 ## References
 
 - John Bishop, VK2ZOI — [Half-Wave Flower Pot Antenna](https://vk2zoi.com/articles/half-wave-flower-pot/) (the build I'm following)
-- VK2ZOI — [Dual Band Half-Wave Flower Pot (PDF)](https://www.zl2ko.org.nz/wp-content/uploads/2019/08/VK2ZOI-Dual-Band-Half-Wave-Flower-Pot-Antenna.pdf)
-
-Next time: results from the VSWR sweep, and whether it gets me into the repeaters I currently can't
-reach from home. **73!**
